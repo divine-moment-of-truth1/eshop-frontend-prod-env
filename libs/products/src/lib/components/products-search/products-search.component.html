@@ -1,0 +1,18 @@
+<div class="products-search">
+    <!-- <i class="pi pi-search"></i> -->
+    <input 
+        type="text"
+        placeholder="Find products"
+        class="products-search-input"
+        name="search"
+        id="search"
+        [(ngModel)]="searchCriteria"
+        (keyup.enter)="submitSearch()"
+    >
+    <!-- <small *ngIf="missingSearchText" class="p-error">Invalid</small> -->
+    <p-button 
+        icon="pi pi-search"
+        (click)="submitSearch()"
+        class="p-button-rounded"
+    ></p-button>
+</div>

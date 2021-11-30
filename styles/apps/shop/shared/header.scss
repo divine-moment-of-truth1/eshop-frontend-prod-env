@@ -1,0 +1,31 @@
+header {
+    margin-bottom: 25PX;
+    
+    .logo {
+        img {
+            width: 160px;
+        }
+    }
+
+    .navigation {
+        padding-top: 32px;
+    }
+
+    .search {
+        padding-top: 24px;
+    }
+
+    .tools {
+        padding-top: 32px;
+
+        .pi {
+            margin-right: 10px;
+        }
+        .cart-icon {
+            &:hover {
+                color: $primary-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
