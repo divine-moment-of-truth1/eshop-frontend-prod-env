@@ -27,8 +27,6 @@ export class ProductsService {
         if (sortBy) {
             params = params.append('sort', sortBy.value)
         }
-
-        //console.log(sortBy);
         
         return this.http.get<Product[]>(this.apiURLProducts, {params : params} );
     }
@@ -44,8 +42,6 @@ export class ProductsService {
         if (sortBy) {
             params = params.append('sort', sortBy.value)
         }
-        
-        // console.log(params);
 
         return this.http.get<Product[]>(this.apiURLProducts, { params: params } );
     }
@@ -75,27 +71,8 @@ export class ProductsService {
     return this.http.get<any>(this.apiURLProducts, {params : params} );
     }
 
-    getProductsAdmin(sortBy: any, searchCriteria: string, categoriesFilter?: string[]): Observable<Product[]> {
-        let params = new HttpParams();
-
-      if (categoriesFilter) {
-        params = params.append('categories', categoriesFilter.join(','))
-        console.log("Entered - categoriesFilter")
-      }
-
-      if (searchCriteria) {
-        params = params.append('searchText', searchCriteria);
-        console.log("Entered - searchCriteria")
-      }
-
-      if (sortBy) {
-        params = params.append('sort', sortBy.value)
-        console.log("Entered - sortBy")
-      }
-
-      //console.log(sortBy);
-      
-      return this.http.get<Product[]>(this.apiURLProducts, {params : params} );
+    getProductsAdmin(): Observable<Product[]> {
+        return this.http.get<Product[]>(this.apiURLProducts + '/productsAdmin' );
     }
 
     getProductById(productId: string): Observable<Product> {
