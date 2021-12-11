@@ -11,10 +11,14 @@ export class GalleryComponent implements OnInit {
   selectedImageUrl: string;
 
   @Input() images: string[];
+  @Input() image: string;
 
   ngOnInit(): void {
       if (this.hasImages) {
         this.selectedImageUrl = this.images[0];
+      }
+      else {
+        this.selectedImageUrl = this.image;
       }
   }
 
