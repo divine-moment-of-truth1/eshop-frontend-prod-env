@@ -83,7 +83,21 @@ export class UsersListComponent implements OnInit, OnDestroy {
         .pipe(takeUntil(this.endSub$))
         .subscribe(user => {
             this.users = user;
+            // Remove admin user from list
+            this._removeAdminUser();
         })
+  }
+
+  private _removeAdminUser() {
+    // admin@email.com
+    // password
+
+    // get index of admin user
+    const adminUserIndex = this.users.findIndex(user => user.email === "admin@email.com")
+
+    // Remove Admin user from array so that it does not display on Users list page
+    this.users.splice(adminUserIndex, 1);
+
   }
 
 }
