@@ -11,7 +11,7 @@
     <div class="to-checkout">
         <div class="summary-price">
             <span>Total Price</span>
-            <span>{{ totalPrice | currency }}</span>
+            <span class="total-price">{{ totalPrice | currency }}</span>
         </div>
         <div class="checkout-button" *ngIf="!isCheckout">
             <p-button label="Checkout" (onClick)="navigateToCheckout()"></p-button>
